@@ -1,6 +1,6 @@
 # Parallele LogLevel-Analyse
 
-## Aufgabenstellung 1:  Einfache LogLevel-Zählung (Grundlegend)**
+## Aufgabenstellung 1:  Einfache LogLevel-Zählung (Grundlegend)
 
 ### Ziel  
 
@@ -8,10 +8,10 @@ Die Schüler sollen die Grundlagen der parallelen Verarbeitung mit `ExecutorServ
 
 ### Aufgaben
 
-1.  **Logdateien generieren:** Verwenden Sie den bereitgestellten `LogGenerator`, um eine Anzahl von Logdateien zu erstellen (z.B. 3-5 Dateien). Experimentieren Sie mit verschiedenen Dateigrößen und Dateipräfixen, um unterschiedliche Datensätze zu erzeugen.
+1.  **Logdateien generieren:** Verwenden Sie den bereitgestellten `LogGenerator`, um eine Anzahl von Logdateien zu erstellen (z.B. 5-10 Dateien). Experimentieren Sie mit verschiedenen Dateigrößen und Dateipräfixen, um unterschiedliche Datensätze zu erzeugen.
 2.  **Sequentielle Analyse (zum Vergleich):** Schreiben Sie zuerst ein Programm, das die Logdateien *sequentiell* analysiert. Dieses Programm soll jede Logdatei einzeln öffnen, zeilenweise lesen und die Anzahl der Einträge für jedes LogLevel (TRACE, DEBUG, INFO, WARN, ERROR) zählen. Geben Sie die Ergebnisse für jede Datei und eine Gesamtzusammenfassung aus. Messen Sie die Ausführungszeit dieses sequentiellen Programms.
 3.  **Parallele Analyse mit `ExecutorService`:**
-    *   Entwickeln Sie eine `Callable`-Klasse namens `LogAnalyzerTask`, die eine einzelne Logdatei analysiert und eine `Map` zurückgibt, die die Zählungen der LogLevel für diese Datei enthält (wie im Beispielcode).
+    *   Entwickeln Sie eine `Callable`-Klasse namens `LogAnalyzerTask`, die eine einzelne Logdatei analysiert und eine `Map` zurückgibt, die die Zählungen der LogLevel für diese Datei enthält
     *   Erstellen Sie in der `main`-Methode einen `ExecutorService` mit einer festen Anzahl von Threads (z.B. so viele Threads wie Prozessorkerne verfügbar sind).
     *   Erstellen Sie für jede Logdatei eine Instanz von `LogAnalyzerTask` und übergeben Sie diese dem `ExecutorService` zur Ausführung (`executorService.submit(...)`).
     *   Sammeln Sie die `Future`-Objekte, die von `submit()` zurückgegeben werden, in einer Liste.
